@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;500;700&family=Teko:wght@500;600&display=swap");
+
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-platinum: hsl(0, 0%, 85%);
+    --color-caribbean-current: hsl(183, 31%, 54%);
+    --color-indigo-dye: hsl(204, 42%, 27%);
+    --color-jet: hsl(0, 0%, 17%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+
+    background-color: var(--color-white);
+    color: var(--color-jet);
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: var(--color-jet);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.brand__link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand--style {
+    color: var(--color-caribbean-current);
+    font-size: 2.5rem;
+    font-family: "Teko";
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: capitalize;
+}
+
+.brand__image-container {
+    width: 50px;
+    margin-right: 1rem;
+}
+
+.brand__image {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.menu {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.menu__icon path {
+    fill: var(--color-caribbean-current);
+}
+
+.nav {
+    width: 100%;
+}
