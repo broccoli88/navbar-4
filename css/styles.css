@@ -4,6 +4,7 @@
     --color-white: hsl(0, 0%, 100%);
     --color-platinum: hsl(0, 0%, 85%);
     --color-caribbean-current: hsl(183, 31%, 54%);
+    --color-lighter-caribbean-current: hsl(183, 31%, 74%);
     --color-indigo-dye: hsl(204, 42%, 27%);
     --color-jet: hsl(0, 0%, 17%);
 }
@@ -32,18 +33,19 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--color-jet);
 }
 
-.navbar {
+.nav {
     background-color: var(--color-jet);
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem;
 }
 
-.brand__link {
+.brand {
     display: inline-flex;
     align-items: center;
 }
@@ -73,10 +75,65 @@ a {
     cursor: pointer;
 }
 
-.menu__icon path {
+.icon__path {
     fill: var(--color-caribbean-current);
+    transition: all 0.2s;
 }
 
-.nav {
+.nav__list {
+    list-style: none;
     width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.6s;
+}
+
+.nav__item {
+    margin-block: 1.5rem;
+}
+
+.nav__link {
+    padding: 1rem 0;
+    display: block;
+    color: var(--color-caribbean-current);
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    transition: color 0.2s;
+}
+
+.nav__link:hover {
+    color: var(--color-lighter-caribbean-current);
+}
+
+.menu-expanded .nav__list {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+.menu-expanded .icon__path {
+    fill: var(--color-lighter-caribbean-current);
+}
+
+@media (min-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .nav__list {
+        width: auto;
+        max-height: fit-content;
+        opacity: 1;
+        display: flex;
+        gap: clamp(2rem, 3vw, 6rem);
+    }
+
+    .nav__item {
+        margin: 0 clamp(0.5rem, 1vw, 1.5rem);
+    }
+
+    .nav__link {
+        padding: 0;
+    }
 }
